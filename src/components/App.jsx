@@ -4,6 +4,7 @@ import HomePage from 'pages/HomePage';
 import { EventsPage } from 'pages/EventsPage';
 import EventSubPage from 'pages/EventSubPage';
 import EventDetailPage from 'pages/EventDetailPage';
+import { SearchPage } from 'pages/SearchPage';
 export const App = () => {
   return (
     <Routes>
@@ -13,6 +14,10 @@ export const App = () => {
           <Route path=":idEvent" element={<EventSubPage />} />
         </Route>
         <Route path="events/:idEvent/details" element={<EventDetailPage />} />
+        <Route path='search' element={<SearchPage />}>
+          <Route path=":idEvent" element={<EventSubPage />} />
+        </Route>
+        <Route path="search/:idEvent/details" element={<EventDetailPage />} />
       </Route>
     </Routes>
   );
